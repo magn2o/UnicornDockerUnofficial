@@ -27,5 +27,7 @@ if [ ! -f "/opt/UnicornFFMPEG/bin/Plex Transcoder-linux" ]; then
   exit 1
 fi
 
+[ -f "/usr/lib/plexmediaserver/Plex Relay" ] && rm -f "/usr/lib/plexmediaserver/Plex Relay"
 [ -f "/usr/lib/plexmediaserver/Plex Transcoder" ] && rm -f "/usr/lib/plexmediaserver/Plex Transcoder"
+
 cp -f "/opt/UnicornFFMPEG/bin/Plex Transcoder-linux" "/usr/lib/plexmediaserver/Plex Transcoder"
