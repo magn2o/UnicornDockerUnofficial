@@ -4,16 +4,16 @@ echo "Starting UnicornLoadBalancer."
 
 export SERVER_PORT=${SERVER_PORT:-3001}
 export SERVER_PUBLIC="${SERVER_PUBLIC:-http://127.0.0.1:3001}"
-export PLEX_HOST=127.0.0.1
+export PLEX_HOST=${PLEX_HOST:-127.0.0.1}
 export PLEX_PORT=${PLEX_PORT:-32400}
-export PLEX_PATH_USR=/usr/lib/plexmediaserver/
-export PLEX_PATH_SESSIONS="/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Cache/Transcode/Sessions"
+export PLEX_PATH_USR="${PLEX_PATH_USR:-/usr/lib/plexmediaserver/}"
+export PLEX_PATH_SESSIONS="${PLEX_PATH_SESSIONS:-/var/lib/plexmediaserver/Library/Application Support/Plex  Media  Server/Cache/Transcode/Sessions}"
 export DATABASE_MODE=${DATABASE_MODE:-sqlite}
-export DATABASE_SQLITE_PATH="/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Plug-in Support/Databases/com.plexapp.plugins.library.db"
+export DATABASE_SQLITE_PATH="${DATABASE_SQLITE_PATH:-/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Plug-in Support/Databases/com.plexapp.plugins.library.db}"
 export DATABASE_POSTGRESQL_HOST=${DATABASE_POSTGRESQL_HOST:-""}
 export DATABASE_POSTGRESQL_DATABASE=${DATABASE_POSTGRESQL_DATABASE:-""}
 export DATABASE_POSTGRESQL_USER=${DATABASE_POSTGRESQL_USER:-""}
-export DATABASE_POSTGRESQL_PASSWORD=$DATABASE_POSTGRESQL_PASSWORD
+export DATABASE_POSTGRESQL_PASSWORD=${DATABASE_POSTGRESQL_PASSWORD:-""}
 export DATABASE_POSTGRESQL_PORT=${DATABASE_POSTGRESQL_PORT:-5432}
 export REDIS_HOST=${REDIS_HOST:-""}
 export REDIS_PORT=${REDIS_PORT:-6379}
