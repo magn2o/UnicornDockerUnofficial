@@ -1,0 +1,24 @@
+#!/usr/bin/with-contenv bash
+
+# If we are debugging, enable trace
+if [ "${DEBUG,,}" = "true" ]; then
+  set -x
+fi
+
+. /unicorn-common.sh
+
+readVarFromConf "UnicornLoadBalancer_version" installedVersion
+
+getVersionInfo "UnicornLoadBalancer" remoteVersion remoteFile
+
+if [ -z "${remoteVersion}" ] || [ -z "${remoteFile}" ]; then
+  echo "Could not get update version"
+  exit 0
+fi
+
+if [ "${remoteVersion}" = "${installedVersion}" ]; then
+  exit 0
+fi
+
+echo "Attempting to upgrade to: ${remoteVersion}"
+installFromUrl "${remoteFile}"
