@@ -7,6 +7,7 @@ RUN \
     apt-get install -y \
       nodejs \
       git \
+      iptables \
     && \
 
 # Cleanup
